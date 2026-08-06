@@ -1,0 +1,59 @@
+{
+  "slug": "calorie",
+  "category": "health",
+  "title": "Calorie Calculator",
+  "shortTitle": "Calorie",
+  "description": "Estimate your daily calorie needs for maintenance, weight loss, or weight gain based on activity level.",
+  "icon": "Flame",
+  "featured": false,
+  "popular": true,
+  "dateAdded": "2026-06-24",
+  "resultUnit": "kcal/day",
+  "chartType": "none",
+  "fields": [
+    { "id": "sex", "label": "Sex", "type": "radio", "defaultValue": "male", "options": [
+      { "label": "Male", "value": "male" },
+      { "label": "Female", "value": "female" }
+    ] },
+    { "id": "weight", "label": "Weight", "type": "number", "defaultValue": 70, "min": 1, "max": 500, "step": 0.1 },
+    { "id": "weightUnit", "label": "Weight unit", "type": "select", "defaultValue": "kg", "options": [
+      { "label": "kg", "value": "kg" },
+      { "label": "lb", "value": "lb" }
+    ] },
+    { "id": "height", "label": "Height", "type": "number", "defaultValue": 175, "min": 1, "max": 300, "step": 0.1 },
+    { "id": "heightUnit", "label": "Height unit", "type": "select", "defaultValue": "cm", "options": [
+      { "label": "cm", "value": "cm" },
+      { "label": "in", "value": "in" },
+      { "label": "ft", "value": "ft" }
+    ] },
+    { "id": "age", "label": "Age", "type": "number", "unit": "years", "defaultValue": 30, "min": 10, "max": 100, "step": 1 },
+    { "id": "activityLevel", "label": "Activity level", "type": "select", "defaultValue": "moderate", "options": [
+      { "label": "Sedentary (little or no exercise)", "value": "sedentary" },
+      { "label": "Light (1-3 days/week)", "value": "light" },
+      { "label": "Moderate (3-5 days/week)", "value": "moderate" },
+      { "label": "Active (6-7 days/week)", "value": "active" },
+      { "label": "Very active (physical job or 2x/day)", "value": "very_active" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Daily calorie needs are estimated by first calculating Basal Metabolic Rate (BMR), then multiplying by an activity factor to get Total Daily Energy Expenditure (TDEE).",
+    "expression": "TDEE = BMR × activity multiplier",
+    "variables": [
+      { "symbol": "BMR", "meaning": "Calories burned at complete rest (Mifflin-St Jeor equation)" },
+      { "symbol": "activity multiplier", "meaning": "Factor from 1.2 (sedentary) to 1.9 (very active)" }
+    ]
+  },
+  "examples": [
+    { "title": "30-year-old male, 70kg, 175cm, moderately active", "inputs": { "sex": "male", "weight": 70, "weightUnit": "kg", "height": 175, "heightUnit": "cm", "age": 30, "activityLevel": "moderate" } }
+  ],
+  "faqs": [
+    { "question": "How many calories should I eat to lose weight?", "answer": "A common approach is a deficit of about 500 calories/day below maintenance, which corresponds to roughly 0.5 kg (1 lb) of weight loss per week, though individual results vary." },
+    { "question": "Why does activity level matter so much?", "answer": "Activity level can change your total calorie needs by 50% or more between a sedentary lifestyle and a very physically active one, since it accounts for all the energy burned outside of resting metabolism." },
+    { "question": "Is this the same as counting macros?", "answer": "No - this gives your total daily calorie target. Macronutrient (protein/carb/fat) splits are a separate decision you make within that calorie budget." }
+  ],
+  "relatedSlugs": ["bmr", "bmi", "body-fat", "water-intake"],
+  "seoContent": [
+    { "heading": "BMR vs. TDEE: what's the difference", "body": "Basal Metabolic Rate (BMR) is the energy your body burns at complete rest just to keep essential functions running. Total Daily Energy Expenditure (TDEE) adds in the calories burned through daily movement, exercise, and digestion, giving a realistic estimate of how many calories you actually need in a day." },
+    { "heading": "Using this for weight management", "body": "Once you know your maintenance calories (TDEE), eating consistently below it creates the calorie deficit needed for weight loss, while eating above it supports weight gain or muscle building. Because these are estimates, it's worth tracking your actual weight trend over a few weeks and adjusting your intake if progress differs from expectations." }
+  ]
+}

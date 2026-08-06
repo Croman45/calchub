@@ -1,0 +1,38 @@
+{
+  "slug": "flooring",
+  "category": "construction",
+  "title": "Flooring Calculator",
+  "shortTitle": "Flooring",
+  "description": "Calculate how much flooring material and how many boxes you need, including a waste allowance.",
+  "icon": "LayoutGrid",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-14",
+  "resultUnit": "sq ft",
+  "chartType": "none",
+  "fields": [
+    { "id": "roomLength", "label": "Room length", "type": "number", "unit": "ft", "defaultValue": 15, "min": 0.1, "step": 0.1 },
+    { "id": "roomWidth", "label": "Room width", "type": "number", "unit": "ft", "defaultValue": 12, "min": 0.1, "step": 0.1 },
+    { "id": "wasteFactor", "label": "Waste factor", "type": "number", "unit": "%", "defaultValue": 10, "min": 0, "max": 30, "step": 1 },
+    { "id": "coveragePerBox", "label": "Coverage per box", "type": "number", "unit": "sq ft", "defaultValue": 20, "min": 1, "step": 1 }
+  ],
+  "formula": {
+    "summary": "Room area is increased by a waste percentage to cover cuts and mistakes, then divided by each box's coverage to get the number of boxes to buy.",
+    "expression": "Boxes = ceil((length × width × (1 + waste%)) ÷ coveragePerBox)",
+    "variables": [
+      { "symbol": "waste%", "meaning": "Extra material percentage to cover cuts, mistakes, and future repairs" }
+    ]
+  },
+  "examples": [
+    { "title": "15ft × 12ft room, 10% waste, 20 sq ft per box", "inputs": { "roomLength": 15, "roomWidth": 12, "wasteFactor": 10, "coveragePerBox": 20 } }
+  ],
+  "faqs": [
+    { "question": "How much waste factor should I use?", "answer": "10% is standard for a simple rectangular room laid straight. Use 15% or more for diagonal layouts, herringbone patterns, or rooms with many alcoves and cuts." },
+    { "question": "Should I buy extra boxes for future repairs?", "answer": "It's a good idea to keep one extra box from the same dye lot for future repairs, since flooring colors can vary slightly between production runs purchased later." }
+  ],
+  "relatedSlugs": ["tile", "paint", "concrete", "area-conversion"],
+  "seoContent": [
+    { "heading": "Why waste factor is essential for flooring", "body": "Almost no room is a perfect rectangle that uses every plank or tile with zero cuts - closets, doorways, and room shape irregularities all create offcuts that can't be reused elsewhere. Building in a waste factor before calculating box counts avoids a frustrating mid-project trip back to the store." },
+    { "heading": "Rounding up to whole boxes", "body": "Since flooring is sold in sealed boxes covering a fixed area, this calculator always rounds the final box count up to the next whole box - buying a partial box isn't an option, and having one extra box on hand is far better than coming up short." }
+  ]
+}

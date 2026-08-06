@@ -1,0 +1,64 @@
+---
+title: "The Math Behind Compound Interest (And Why It Feels Like Magic)"
+description: "Compound interest is often called the eighth wonder of the world. Here's the actual math that makes it so powerful over long periods of time."
+date: "2026-07-28"
+author: "CalcHub Team"
+tags: ["finance", "math", "compound-interest"]
+coverIcon: "TrendingUp"
+---
+
+Albert Einstein is often (probably apocryphally) credited with calling compound interest "the
+eighth wonder of the world." Whether or not he actually said it, the underlying math explains why
+the phrase stuck.
+
+## Simple interest vs. compound interest
+
+**Simple interest** is calculated only on your original principal, every period:
+
+```
+Interest = P × r × t
+```
+
+**Compound interest** is calculated on your principal *plus* all previously earned interest:
+
+```
+A = P(1 + r/n)^(nt)
+```
+
+Where `P` is principal, `r` is the annual interest rate, `n` is how many times per year interest
+compounds, and `t` is time in years. The difference between these two formulas seems small over
+a year or two - but it compounds, quite literally, over decades.
+
+## A concrete comparison
+
+Take $10,000 at 7% annual interest over 30 years:
+
+| Method | Formula | Result after 30 years |
+|---|---|---|
+| Simple interest | P × r × t, added to P | $31,000 |
+| Compound interest (annual) | P(1+r)^t | ≈ $76,123 |
+
+That's a difference of over $45,000 on the same starting amount and the same rate, purely because
+compound interest lets earlier interest start earning interest of its own.
+
+## Why compounding frequency matters less than people think
+
+You might expect daily compounding to dramatically outperform monthly or annual compounding, but
+the actual difference is usually small - often well under 1% of the final balance for typical
+consumer rates. What matters far more is:
+
+1. **The interest rate** - even a couple of percentage points compounds into a large difference
+   over decades.
+2. **Time** - the earlier money starts compounding, the more periods it has to benefit from
+   growth-on-growth.
+3. **Consistent contributions** - adding money regularly, even in small amounts, meaningfully
+   boosts the final balance since each contribution starts compounding immediately.
+
+## See it for yourself
+
+Our [Compound Interest Calculator](/finance/compound-interest) lets you adjust principal, rate,
+compounding frequency, time horizon, and monthly contributions to see exactly how each factor
+changes your ending balance - including a year-by-year growth chart.
+
+If you're saving toward a specific goal with regular contributions, the
+[Savings Calculator](/finance/savings) frames the same math around a target balance instead.

@@ -1,0 +1,39 @@
+{
+  "slug": "investment",
+  "category": "finance",
+  "title": "Investment Calculator",
+  "shortTitle": "Investment",
+  "description": "Project the future value of an investment portfolio with annual contributions and an expected return rate.",
+  "icon": "LineChart",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-06-29",
+  "resultUnit": "USD",
+  "chartType": "area",
+  "fields": [
+    { "id": "initialInvestment", "label": "Initial investment", "type": "number", "unit": "$", "defaultValue": 5000, "min": 0, "step": 100 },
+    { "id": "annualContribution", "label": "Annual contribution", "type": "number", "unit": "$", "defaultValue": 3000, "min": 0, "step": 100 },
+    { "id": "expectedReturn", "label": "Expected annual return", "type": "number", "unit": "%", "defaultValue": 8, "min": -20, "max": 40, "step": 0.1 },
+    { "id": "years", "label": "Investment horizon", "type": "number", "unit": "years", "defaultValue": 20, "min": 1, "max": 60, "step": 1 }
+  ],
+  "formula": {
+    "summary": "Each year, the portfolio grows by the expected return and then that year's contribution is added, compounding forward for the full investment horizon.",
+    "expression": "Balance_y = Balance_{y-1} × (1 + r) + contribution",
+    "variables": [
+      { "symbol": "r", "meaning": "Expected annual return, as a decimal" },
+      { "symbol": "contribution", "meaning": "Amount added at the end of each year" }
+    ]
+  },
+  "examples": [
+    { "title": "$5,000 start, $3,000/year, 8% expected return over 20 years", "inputs": { "initialInvestment": 5000, "annualContribution": 3000, "expectedReturn": 8, "years": 20 } }
+  ],
+  "faqs": [
+    { "question": "What return rate should I use?", "answer": "The S&P 500's long-run historical average is often cited around 7-10% before inflation, but future returns are never guaranteed - try a conservative and an optimistic rate to see a range of outcomes." },
+    { "question": "Does this account for taxes or fees?", "answer": "No - this is a gross projection. Fund expense ratios, advisory fees, and taxes on withdrawals or dividends will all reduce your real, take-home return." }
+  ],
+  "relatedSlugs": ["compound-interest", "savings", "mortgage"],
+  "seoContent": [
+    { "heading": "Long-term investing and compounding", "body": "Over long horizons, the majority of an investment portfolio's final value typically comes from compounded growth rather than the contributions themselves, because early gains have decades to compound. This calculator projects that growth year by year using a constant assumed return, which is a simplification of real markets but a standard way to compare different contribution and time-horizon scenarios." },
+    { "heading": "Sequence of returns and volatility", "body": "Real investment returns vary significantly year to year, and the order those returns arrive in (the 'sequence of returns') can matter a lot, especially near retirement when withdrawals begin. Treat this projection as a smoothed, average-case estimate rather than a forecast of any specific year." }
+  ]
+}

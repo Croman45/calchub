@@ -1,0 +1,47 @@
+{
+  "slug": "bmi",
+  "category": "health",
+  "title": "BMI Calculator",
+  "shortTitle": "BMI",
+  "description": "Calculate your Body Mass Index (BMI) from height and weight and see your weight category.",
+  "icon": "Activity",
+  "featured": true,
+  "popular": true,
+  "dateAdded": "2026-06-21",
+  "resultUnit": "kg/m²",
+  "chartType": "bar",
+  "fields": [
+    { "id": "weight", "label": "Weight", "type": "number", "defaultValue": 70, "min": 1, "max": 500, "step": 0.1 },
+    { "id": "weightUnit", "label": "Weight unit", "type": "select", "defaultValue": "kg", "options": [
+      { "label": "kg", "value": "kg" },
+      { "label": "lb", "value": "lb" }
+    ] },
+    { "id": "height", "label": "Height", "type": "number", "defaultValue": 175, "min": 1, "max": 300, "step": 0.1 },
+    { "id": "heightUnit", "label": "Height unit", "type": "select", "defaultValue": "cm", "options": [
+      { "label": "cm", "value": "cm" },
+      { "label": "in", "value": "in" },
+      { "label": "ft", "value": "ft" }
+    ] }
+  ],
+  "formula": {
+    "summary": "BMI compares your weight to your height squared, using metric units, to give a quick screening estimate of whether your weight is in a typical range.",
+    "expression": "BMI = weight (kg) / height (m)²",
+    "variables": [
+      { "symbol": "weight", "meaning": "Body weight in kilograms" },
+      { "symbol": "height", "meaning": "Height in meters" }
+    ]
+  },
+  "examples": [
+    { "title": "70 kg, 175 cm", "inputs": { "weight": 70, "weightUnit": "kg", "height": 175, "heightUnit": "cm" } }
+  ],
+  "faqs": [
+    { "question": "What BMI range is considered healthy?", "answer": "For most adults, the World Health Organization defines 18.5-24.9 as 'normal weight', below 18.5 as underweight, 25-29.9 as overweight, and 30+ as obesity." },
+    { "question": "Is BMI accurate for everyone?", "answer": "No - BMI doesn't distinguish muscle from fat, so athletes and very muscular people often show a higher BMI despite low body fat. It's also less reliable for older adults, children, and pregnant people." },
+    { "question": "Should I use BMI alone to judge my health?", "answer": "No - use it as one quick screening signal alongside other measures like waist circumference, body fat percentage, and how you feel, and talk to a doctor about what's healthy for you specifically." }
+  ],
+  "relatedSlugs": ["bmr", "body-fat", "calorie", "water-intake"],
+  "seoContent": [
+    { "heading": "What BMI measures and where it came from", "body": "Body Mass Index was developed in the 1830s as a population-level statistical tool, not an individual diagnostic measure, but it remains widely used today because it's simple to calculate and correlates reasonably well with body fat at a population scale. This calculator converts your inputs to metric units automatically and applies the standard formula." },
+    { "heading": "Using BMI alongside other health measures", "body": "Because BMI can't tell the difference between muscle and fat mass, it's most useful as a starting point rather than a complete picture. Pairing it with a body fat percentage estimate (like our body fat calculator) and tracking trends over time gives a much more reliable sense of your health than a single BMI number." }
+  ]
+}

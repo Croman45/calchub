@@ -1,0 +1,51 @@
+{
+  "slug": "mortgage",
+  "category": "finance",
+  "title": "Mortgage Calculator",
+  "shortTitle": "Mortgage",
+  "description": "Calculate your monthly mortgage payment including principal, interest, property tax, and home insurance.",
+  "icon": "Home",
+  "featured": true,
+  "popular": true,
+  "dateAdded": "2026-06-20",
+  "resultUnit": "USD/month",
+  "chartType": "bar",
+  "fields": [
+    { "id": "homePrice", "label": "Home price", "type": "number", "unit": "$", "defaultValue": 400000, "min": 0, "step": 1000, "helpText": "The total purchase price of the home." },
+    { "id": "downPaymentPercent", "label": "Down payment", "type": "number", "unit": "%", "defaultValue": 20, "min": 0, "max": 100, "step": 1 },
+    { "id": "termYears", "label": "Loan term", "type": "select", "defaultValue": "30", "options": [
+      { "label": "15 years", "value": "15" },
+      { "label": "20 years", "value": "20" },
+      { "label": "30 years", "value": "30" }
+    ] },
+    { "id": "interestRate", "label": "Interest rate", "type": "number", "unit": "%", "defaultValue": 6.5, "min": 0, "max": 25, "step": 0.01 },
+    { "id": "annualPropertyTax", "label": "Annual property tax", "type": "number", "unit": "$", "defaultValue": 4800, "min": 0, "step": 50 },
+    { "id": "annualInsurance", "label": "Annual home insurance", "type": "number", "unit": "$", "defaultValue": 1500, "min": 0, "step": 50 }
+  ],
+  "formula": {
+    "summary": "The monthly principal & interest payment on a fixed-rate mortgage uses the standard amortization formula, then property tax and insurance are added on top as escrow.",
+    "expression": "M = P × [r(1+r)^n] / [(1+r)^n − 1]",
+    "variables": [
+      { "symbol": "P", "meaning": "Loan principal (home price minus down payment)" },
+      { "symbol": "r", "meaning": "Monthly interest rate (annual rate ÷ 12)" },
+      { "symbol": "n", "meaning": "Total number of monthly payments (years × 12)" }
+    ]
+  },
+  "examples": [
+    {
+      "title": "$400,000 home, 20% down, 30-year fixed at 6.5%",
+      "inputs": { "homePrice": 400000, "downPaymentPercent": 20, "termYears": "30", "interestRate": 6.5, "annualPropertyTax": 4800, "annualInsurance": 1500 },
+      "note": "A common baseline scenario for a first-time buyer."
+    }
+  ],
+  "faqs": [
+    { "question": "Does this include property tax and insurance?", "answer": "Yes - enter your annual property tax and homeowners insurance and the calculator adds 1/12th of each to your monthly payment, the same way an escrow account works." },
+    { "question": "What down payment should I use?", "answer": "20% avoids private mortgage insurance (PMI) on a conventional loan, but many buyers put down less. Lower down payments increase your loan amount and monthly payment." },
+    { "question": "Why is my real payment different from this estimate?", "answer": "Lenders may also include PMI, HOA dues, or a different escrow cushion, and your final rate depends on your credit profile and current market conditions at closing." }
+  ],
+  "relatedSlugs": ["loan", "auto-loan", "compound-interest", "savings"],
+  "seoContent": [
+    { "heading": "How mortgage payments are calculated", "body": "A fixed-rate mortgage payment is built from an amortization schedule: each month you pay a mix of interest (based on the remaining balance) and principal, and that mix shifts toward principal over the life of the loan even though the total payment stays flat. This calculator applies the standard amortization formula to your home price, down payment, term, and rate, then layers your property tax and insurance on top so the total matches what you'd actually see on a monthly statement." },
+    { "heading": "Down payment and loan term trade-offs", "body": "A larger down payment reduces your loan principal directly, which lowers both your monthly payment and the total interest paid over the life of the loan. Choosing a shorter term (15 years instead of 30) increases the monthly payment but dramatically cuts total interest, since less time means less compounding of interest on the outstanding balance." }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "compound-interest",
+  "category": "finance",
+  "title": "Compound Interest Calculator",
+  "shortTitle": "Compound Interest",
+  "description": "See how your money grows over time with compound interest and optional monthly contributions.",
+  "icon": "TrendingUp",
+  "featured": false,
+  "popular": true,
+  "dateAdded": "2026-06-25",
+  "resultUnit": "USD",
+  "chartType": "area",
+  "fields": [
+    { "id": "principal", "label": "Starting amount", "type": "number", "unit": "$", "defaultValue": 10000, "min": 0, "step": 100 },
+    { "id": "interestRate", "label": "Annual interest rate", "type": "number", "unit": "%", "defaultValue": 7, "min": 0, "max": 50, "step": 0.01 },
+    { "id": "compoundFrequency", "label": "Compounding frequency", "type": "select", "defaultValue": "12", "options": [
+      { "label": "Annually", "value": "1" },
+      { "label": "Semi-annually", "value": "2" },
+      { "label": "Quarterly", "value": "4" },
+      { "label": "Monthly", "value": "12" },
+      { "label": "Daily", "value": "365" }
+    ] },
+    { "id": "years", "label": "Time to grow", "type": "number", "unit": "years", "defaultValue": 10, "min": 0, "max": 80, "step": 1 },
+    { "id": "monthlyContribution", "label": "Monthly contribution", "type": "number", "unit": "$", "defaultValue": 100, "min": 0, "step": 10 }
+  ],
+  "formula": {
+    "summary": "Compound interest grows a balance by reinvesting the interest earned each period, so future interest is earned on both the original principal and prior interest.",
+    "expression": "A = P(1 + r/n)^(nt)",
+    "variables": [
+      { "symbol": "P", "meaning": "Principal (starting amount)" },
+      { "symbol": "r", "meaning": "Annual interest rate (as a decimal)" },
+      { "symbol": "n", "meaning": "Number of times interest compounds per year" },
+      { "symbol": "t", "meaning": "Time in years" }
+    ]
+  },
+  "examples": [
+    { "title": "$10,000 at 7% for 10 years, monthly compounding, $100/month added", "inputs": { "principal": 10000, "interestRate": 7, "compoundFrequency": "12", "years": 10, "monthlyContribution": 100 } }
+  ],
+  "faqs": [
+    { "question": "What's the difference between compound and simple interest?", "answer": "Simple interest is earned only on the original principal. Compound interest is earned on the principal plus all previously accumulated interest, so growth accelerates over time." },
+    { "question": "Does compounding frequency matter much?", "answer": "It has a smaller effect than most people expect - the difference between monthly and daily compounding on a typical balance is usually well under 1% of the final value. Rate and time matter far more." },
+    { "question": "How are monthly contributions handled?", "answer": "The calculator adds your contribution every month and compounds the running balance at the equivalent monthly rate derived from your chosen compounding frequency, which is how most savings and brokerage accounts actually work." }
+  ],
+  "relatedSlugs": ["savings", "investment", "mortgage", "loan"],
+  "seoContent": [
+    { "heading": "Why compound interest is called the eighth wonder", "body": "Because interest is calculated on an ever-growing balance, compound interest produces exponential rather than linear growth. Over short periods the difference from simple interest is small, but over decades it becomes enormous - which is why starting early matters more than the exact rate for long-term goals like retirement." },
+    { "heading": "The role of regular contributions", "body": "Adding a fixed amount every month, even a small one, meaningfully boosts your ending balance because each contribution starts compounding from the moment it's deposited. This calculator models that by adding your monthly contribution before applying that period's growth, matching how real savings and investment accounts credit interest." }
+  ]
+}

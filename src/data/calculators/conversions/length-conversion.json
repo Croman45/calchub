@@ -1,0 +1,54 @@
+{
+  "slug": "length-conversion",
+  "category": "conversions",
+  "title": "Length Converter",
+  "shortTitle": "Length",
+  "description": "Convert between millimeters, centimeters, meters, kilometers, inches, feet, yards, and miles.",
+  "icon": "Ruler",
+  "featured": true,
+  "popular": false,
+  "dateAdded": "2026-06-28",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 1, "step": 0.01 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "m", "options": [
+      { "label": "Millimeters (mm)", "value": "mm" },
+      { "label": "Centimeters (cm)", "value": "cm" },
+      { "label": "Meters (m)", "value": "m" },
+      { "label": "Kilometers (km)", "value": "km" },
+      { "label": "Inches (in)", "value": "in" },
+      { "label": "Feet (ft)", "value": "ft" },
+      { "label": "Yards (yd)", "value": "yd" },
+      { "label": "Miles (mi)", "value": "mi" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "ft", "options": [
+      { "label": "Millimeters (mm)", "value": "mm" },
+      { "label": "Centimeters (cm)", "value": "cm" },
+      { "label": "Meters (m)", "value": "m" },
+      { "label": "Kilometers (km)", "value": "km" },
+      { "label": "Inches (in)", "value": "in" },
+      { "label": "Feet (ft)", "value": "ft" },
+      { "label": "Yards (yd)", "value": "yd" },
+      { "label": "Miles (mi)", "value": "mi" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Every length unit is converted through a common base unit (meters): the input is converted to meters, then meters are converted to the target unit.",
+    "expression": "result = value × (factor_from ÷ factor_to), where factors convert each unit to meters",
+    "variables": [
+      { "symbol": "factor_from, factor_to", "meaning": "Each unit's conversion factor to meters" }
+    ]
+  },
+  "examples": [
+    { "title": "1 meter to feet", "inputs": { "value": 1, "fromUnit": "m", "toUnit": "ft" }, "note": "= 3.28084 ft" }
+  ],
+  "faqs": [
+    { "question": "How precise are the conversion factors?", "answer": "All factors use internationally defined exact conversions (e.g. 1 inch = 2.54 cm exactly), so results are accurate to the decimal places shown." },
+    { "question": "Can I convert imperial to imperial, like feet to miles?", "answer": "Yes - any combination of the eight supported units can be converted to any other, since all conversions route through a common metric base unit." }
+  ],
+  "relatedSlugs": ["weight-conversion", "area-conversion", "speed-conversion"],
+  "seoContent": [
+    { "heading": "Metric and imperial length units", "body": "The metric system (millimeters through kilometers) scales by powers of 10, making conversions within it simple multiplication or division by 10, 100, or 1000. Imperial units (inches, feet, yards, miles) use less regular ratios rooted in historical measurement practices, which is where a converter like this saves the most time." },
+    { "heading": "How the base-unit method works", "body": "Rather than storing a separate conversion factor for every possible pair of units, this calculator converts your input into meters first, then converts from meters into your target unit. This 'hub and spoke' approach keeps the underlying conversion table small while still supporting every combination accurately." }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "bmr",
+  "category": "health",
+  "title": "BMR Calculator",
+  "shortTitle": "BMR",
+  "description": "Calculate your Basal Metabolic Rate - the calories your body burns at complete rest each day.",
+  "icon": "HeartPulse",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-06-26",
+  "resultUnit": "kcal/day",
+  "chartType": "none",
+  "fields": [
+    { "id": "sex", "label": "Sex", "type": "radio", "defaultValue": "male", "options": [
+      { "label": "Male", "value": "male" },
+      { "label": "Female", "value": "female" }
+    ] },
+    { "id": "weight", "label": "Weight", "type": "number", "defaultValue": 70, "min": 1, "max": 500, "step": 0.1 },
+    { "id": "weightUnit", "label": "Weight unit", "type": "select", "defaultValue": "kg", "options": [
+      { "label": "kg", "value": "kg" },
+      { "label": "lb", "value": "lb" }
+    ] },
+    { "id": "height", "label": "Height", "type": "number", "defaultValue": 175, "min": 1, "max": 300, "step": 0.1 },
+    { "id": "heightUnit", "label": "Height unit", "type": "select", "defaultValue": "cm", "options": [
+      { "label": "cm", "value": "cm" },
+      { "label": "in", "value": "in" },
+      { "label": "ft", "value": "ft" }
+    ] },
+    { "id": "age", "label": "Age", "type": "number", "unit": "years", "defaultValue": 30, "min": 10, "max": 100, "step": 1 }
+  ],
+  "formula": {
+    "summary": "The Mifflin-St Jeor equation is the most widely validated formula for estimating resting metabolic rate from weight, height, age, and sex.",
+    "expression": "Men: BMR = 10W + 6.25H − 5A + 5. Women: BMR = 10W + 6.25H − 5A − 161",
+    "variables": [
+      { "symbol": "W", "meaning": "Weight in kilograms" },
+      { "symbol": "H", "meaning": "Height in centimeters" },
+      { "symbol": "A", "meaning": "Age in years" }
+    ]
+  },
+  "examples": [
+    { "title": "30-year-old male, 70kg, 175cm", "inputs": { "sex": "male", "weight": 70, "weightUnit": "kg", "height": 175, "heightUnit": "cm", "age": 30 } }
+  ],
+  "faqs": [
+    { "question": "Why the Mifflin-St Jeor equation specifically?", "answer": "Multiple validation studies have found it more accurate on average than older formulas like Harris-Benedict, which is why it's the equation most dietitians and the Academy of Nutrition and Dietetics currently recommend." },
+    { "question": "Is BMR the same as the calories I should eat?", "answer": "No - BMR is your resting energy use only. Use the Calorie Calculator to add your activity level and get a realistic daily target." }
+  ],
+  "relatedSlugs": ["calorie", "bmi", "body-fat"],
+  "seoContent": [
+    { "heading": "What BMR represents", "body": "Basal Metabolic Rate is the number of calories your body needs to maintain vital functions - breathing, circulation, cell repair - while completely at rest. It typically accounts for 60-75% of total daily calorie expenditure in a sedentary person, which is why it's the starting point for most calorie-need calculations." },
+    { "heading": "Factors that affect your BMR", "body": "Muscle mass, age, sex, and genetics all influence BMR - more muscle mass raises it since muscle tissue burns more energy than fat tissue even at rest, while BMR tends to decline gradually with age. The Mifflin-St Jeor formula captures the most measurable of these factors (weight, height, age, sex) in a simple, validated equation." }
+  ]
+}

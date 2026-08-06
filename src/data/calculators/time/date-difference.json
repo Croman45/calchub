@@ -1,0 +1,35 @@
+{
+  "slug": "date-difference",
+  "category": "time",
+  "title": "Date Difference Calculator",
+  "shortTitle": "Date Difference",
+  "description": "Find the exact number of years, months, days, or total days between any two dates.",
+  "icon": "CalendarRange",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-11",
+  "chartType": "none",
+  "fields": [
+    { "id": "startDate", "label": "Start date", "type": "date", "defaultValue": "2024-01-01" },
+    { "id": "endDate", "label": "End date", "type": "date", "defaultValue": "2024-12-31" }
+  ],
+  "formula": {
+    "summary": "The gap between two dates is broken down using calendar-aware subtraction (matching how the Age Calculator works), plus a simple total-day count.",
+    "expression": "Difference = endDate − startDate, in years/months/days and total days",
+    "variables": [
+      { "symbol": "startDate, endDate", "meaning": "The two dates being compared, in either order" }
+    ]
+  },
+  "examples": [
+    { "title": "January 1 to December 31, 2024", "inputs": { "startDate": "2024-01-01", "endDate": "2024-12-31" }, "note": "= 11 months, 30 days (365 total days, since 2024 is a leap year)" }
+  ],
+  "faqs": [
+    { "question": "Does the order of the two dates matter?", "answer": "No - enter them in either order and the calculator automatically treats the earlier date as the start." },
+    { "question": "Does the result include both the start and end day?", "answer": "The total days figure counts the number of days between the two dates (an exclusive count), which is the standard way durations and date-math libraries report differences." }
+  ],
+  "relatedSlugs": ["age", "countdown"],
+  "seoContent": [
+    { "heading": "Common uses for a date difference calculator", "body": "Calculating the span between two dates comes up constantly: figuring out project duration, contract length, time until a deadline, or how long ago a historical event occurred. This calculator gives both a human-readable years/months/days breakdown and precise total-day and total-week counts." },
+    { "heading": "Calendar math vs. simple day counting", "body": "Because months have different lengths, a 'months and days' breakdown requires walking the calendar rather than doing simple division. This calculator uses the same calendar-aware algorithm as the Age Calculator to guarantee an exact, correct breakdown regardless of which months or leap years fall in the range." }
+  ]
+}

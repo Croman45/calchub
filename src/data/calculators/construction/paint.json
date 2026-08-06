@@ -1,0 +1,44 @@
+{
+  "slug": "paint",
+  "category": "construction",
+  "title": "Paint Calculator",
+  "shortTitle": "Paint",
+  "description": "Calculate how many gallons of paint you need for a room based on wall area and number of coats.",
+  "icon": "PaintBucket",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-13",
+  "resultUnit": "gallons",
+  "chartType": "none",
+  "fields": [
+    { "id": "wallLength", "label": "Total wall length", "type": "number", "unit": "ft", "defaultValue": 40, "min": 1, "step": 1, "helpText": "Add up the length of all walls to be painted." },
+    { "id": "wallHeight", "label": "Wall height", "type": "number", "unit": "ft", "defaultValue": 9, "min": 1, "step": 0.5 },
+    { "id": "doorsWindowsArea", "label": "Doors & windows area", "type": "number", "unit": "sq ft", "defaultValue": 40, "min": 0, "step": 5 },
+    { "id": "coats", "label": "Number of coats", "type": "select", "defaultValue": "2", "options": [
+      { "label": "1 coat", "value": "1" },
+      { "label": "2 coats", "value": "2" },
+      { "label": "3 coats", "value": "3" }
+    ] },
+    { "id": "coveragePerGallon", "label": "Coverage per gallon", "type": "number", "unit": "sq ft", "defaultValue": 350, "min": 100, "step": 10, "helpText": "Check your paint can - typically 350-400 sq ft per gallon." }
+  ],
+  "formula": {
+    "summary": "Wall area minus doors/windows gives the paintable area, which is multiplied by the number of coats, then divided by the paint's coverage rate.",
+    "expression": "Gallons = (wallLength × wallHeight − doorsWindowsArea) × coats ÷ coveragePerGallon",
+    "variables": [
+      { "symbol": "coveragePerGallon", "meaning": "Square feet one gallon covers per coat, per the paint can label" }
+    ]
+  },
+  "examples": [
+    { "title": "40ft of wall, 9ft ceilings, 40 sq ft of openings, 2 coats", "inputs": { "wallLength": 40, "wallHeight": 9, "doorsWindowsArea": 40, "coats": "2", "coveragePerGallon": 350 } }
+  ],
+  "faqs": [
+    { "question": "How do I measure total wall length?", "answer": "Add together the length of every wall you're painting in the room, then multiply by the (single, shared) ceiling height - that's what this calculator does with wallLength × wallHeight." },
+    { "question": "Why subtract doors and windows?", "answer": "Doors and windows aren't painted the same as walls, so their area shouldn't count toward your paint needs - a standard door is about 20 sq ft and a standard window about 15 sq ft, which is why 40 sq ft is a reasonable default for one of each." },
+    { "question": "Do I really need 2 coats?", "answer": "Two coats is standard for even color and durability, especially over a different existing color. A single coat may be enough for touch-ups or when using a paint-and-primer-in-one product on a similar base color." }
+  ],
+  "relatedSlugs": ["concrete", "flooring", "tile", "area-conversion"],
+  "seoContent": [
+    { "heading": "How to estimate paint for a room", "body": "The core calculation is straightforward - wall area times number of coats divided by coverage rate - but getting an accurate wall area means accounting for the space taken up by doors and windows, which don't need paint. This calculator handles that subtraction so your gallon estimate isn't inflated." },
+    { "heading": "Reading your paint can's coverage rate", "body": "Coverage rates vary by paint brand, sheen, and the porosity of your walls - most cans state 350-400 square feet per gallon under ideal conditions, but rougher or unprimed surfaces can reduce that significantly. Using the actual number from your chosen paint's label will give the most accurate result." }
+  ]
+}

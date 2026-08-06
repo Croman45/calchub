@@ -1,0 +1,41 @@
+{
+  "slug": "percentage",
+  "category": "math",
+  "title": "Percentage Calculator",
+  "shortTitle": "Percentage",
+  "description": "Calculate percentages three ways: X% of Y, what percent X is of Y, and percentage change.",
+  "icon": "Percent",
+  "featured": true,
+  "popular": true,
+  "dateAdded": "2026-06-23",
+  "chartType": "none",
+  "fields": [
+    { "id": "mode", "label": "Calculation type", "type": "select", "defaultValue": "percentOf", "options": [
+      { "label": "X% of Y", "value": "percentOf" },
+      { "label": "X is what % of Y", "value": "isWhatPercent" },
+      { "label": "Percentage change from X to Y", "value": "percentChange" }
+    ] },
+    { "id": "valueA", "label": "X", "type": "number", "defaultValue": 20 },
+    { "id": "valueB", "label": "Y", "type": "number", "defaultValue": 200 }
+  ],
+  "formula": {
+    "summary": "Percentage problems reduce to one of three related formulas depending on what you already know and what you're solving for.",
+    "expression": "result = (X ÷ 100) × Y,  or  (X ÷ Y) × 100,  or  ((Y − X) ÷ |X|) × 100",
+    "variables": [
+      { "symbol": "X, Y", "meaning": "The two numbers you provide, depending on the mode" }
+    ]
+  },
+  "examples": [
+    { "title": "What is 20% of 200?", "inputs": { "mode": "percentOf", "valueA": 20, "valueB": 200 } },
+    { "title": "40 is what percent of 200?", "inputs": { "mode": "isWhatPercent", "valueA": 40, "valueB": 200 }, "note": "Answer: 20%" }
+  ],
+  "faqs": [
+    { "question": "How do I calculate a percentage increase?", "answer": "Use 'Percentage change from X to Y' with X as the original value and Y as the new value - a positive result is an increase, negative is a decrease." },
+    { "question": "What's the difference between percentage and percentage point?", "answer": "A percentage change is relative (e.g., going from 10% to 15% is a 50% increase), while a percentage point difference is absolute (a 5 percentage point increase). This calculator computes relative percentage change." }
+  ],
+  "relatedSlugs": ["fraction", "decimal-to-fraction", "scientific"],
+  "seoContent": [
+    { "heading": "The three most common percentage questions", "body": "Nearly every real-world percentage problem falls into one of three categories: finding a percentage of a number (like a tip or discount), finding what percentage one number is of another (like a test score), or finding the percentage change between two values (like a price increase). This calculator handles all three with one tool." },
+    { "heading": "Percentage change and why the sign matters", "body": "Percentage change formulas divide by the absolute value of the original number so the sign of the result always correctly indicates an increase (positive) or decrease (negative), even when working with negative starting values like profit/loss figures." }
+  ]
+}

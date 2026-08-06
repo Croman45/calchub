@@ -1,0 +1,38 @@
+{
+  "slug": "countdown",
+  "category": "time",
+  "title": "Countdown Calculator",
+  "shortTitle": "Countdown",
+  "description": "Count down to any future date and time, live, down to the second.",
+  "icon": "Timer",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-08-01",
+  "chartType": "none",
+  "autoRefreshMs": 1000,
+  "fields": [
+    { "id": "targetDate", "label": "Target date", "type": "date", "defaultValue": "2030-01-01" },
+    { "id": "targetTime", "label": "Target time", "type": "time", "defaultValue": "00:00" }
+  ],
+  "formula": {
+    "summary": "The countdown is the difference between the target date/time and the current moment, refreshed automatically every second and broken into days, hours, minutes, and seconds.",
+    "expression": "Remaining = target − now",
+    "variables": [
+      { "symbol": "target", "meaning": "The date and time you're counting down to" },
+      { "symbol": "now", "meaning": "The current moment, updated live" }
+    ]
+  },
+  "examples": [
+    { "title": "Countdown to January 1, 2030", "inputs": { "targetDate": "2030-01-01", "targetTime": "00:00" } }
+  ],
+  "faqs": [
+    { "question": "Does the countdown update automatically?", "answer": "Yes - once you calculate, the result refreshes every second on its own without needing to resubmit the form." },
+    { "question": "What time zone is used?", "answer": "The target date and time are interpreted in your browser's local time zone, matching what you'd see on your own device's clock." },
+    { "question": "What happens after the target time passes?", "answer": "The calculator switches to showing 'time since' the target instead of 'time remaining,' so it keeps working as an elapsed-time counter afterward." }
+  ],
+  "relatedSlugs": ["date-difference", "age"],
+  "seoContent": [
+    { "heading": "Live countdowns for events and deadlines", "body": "Whether you're counting down to a wedding, product launch, exam, or holiday, seeing the exact days, hours, minutes, and seconds remaining makes a deadline feel concrete. This calculator recalculates every second so the display always reflects the true time remaining." },
+    { "heading": "How the live update works", "body": "After the initial calculation, the page re-runs the same calculation once per second using the current time, rather than requiring you to refresh or resubmit - the same technique broadcast countdown clocks use, built directly into the calculator." }
+  ]
+}

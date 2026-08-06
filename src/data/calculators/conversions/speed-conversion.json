@@ -1,0 +1,48 @@
+{
+  "slug": "speed-conversion",
+  "category": "conversions",
+  "title": "Speed Converter",
+  "shortTitle": "Speed",
+  "description": "Convert between meters/second, km/h, mph, knots, and feet/second for travel, sports, or weather.",
+  "icon": "Gauge",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-08-02",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 100, "step": 0.1 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "kph", "options": [
+      { "label": "Meters/second (m/s)", "value": "mps" },
+      { "label": "Kilometers/hour (km/h)", "value": "kph" },
+      { "label": "Miles/hour (mph)", "value": "mph" },
+      { "label": "Knots", "value": "knot" },
+      { "label": "Feet/second (ft/s)", "value": "fps" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "mph", "options": [
+      { "label": "Meters/second (m/s)", "value": "mps" },
+      { "label": "Kilometers/hour (km/h)", "value": "kph" },
+      { "label": "Miles/hour (mph)", "value": "mph" },
+      { "label": "Knots", "value": "knot" },
+      { "label": "Feet/second (ft/s)", "value": "fps" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Every speed unit is converted through meters per second as the common base unit.",
+    "expression": "result = value × (factor_from ÷ factor_to), where factors convert each unit to m/s",
+    "variables": [
+      { "symbol": "factor_from, factor_to", "meaning": "Each unit's conversion factor to meters per second" }
+    ]
+  },
+  "examples": [
+    { "title": "100 km/h to mph", "inputs": { "value": 100, "fromUnit": "kph", "toUnit": "mph" }, "note": "≈ 62.14 mph" }
+  ],
+  "faqs": [
+    { "question": "What is a knot?", "answer": "A knot is one nautical mile per hour, used in aviation and maritime navigation. It equals about 1.852 km/h, slightly more than a regular mph." },
+    { "question": "Why would I need feet/second?", "answer": "Feet per second is common in physics and engineering contexts, such as describing wind speed, projectile velocity, or fall speed in the US customary system." }
+  ],
+  "relatedSlugs": ["length-conversion", "temperature-conversion", "weight-conversion"],
+  "seoContent": [
+    { "heading": "Speed units across different fields", "body": "Road speed limits use km/h or mph depending on the country, aviation and shipping use knots, and scientific contexts often default to meters per second (the SI unit). This converter covers all five so you can move fluidly between them." },
+    { "heading": "How speed conversions are derived", "body": "Since speed is a length unit divided by a time unit, its conversion factors combine a length conversion with a time conversion - for example, km/h to m/s divides by 3.6 because there are 3,600 seconds in an hour and 1,000 meters in a kilometer." }
+  ]
+}

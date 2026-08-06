@@ -1,0 +1,45 @@
+{
+  "slug": "water-intake",
+  "category": "health",
+  "title": "Water Intake Calculator",
+  "shortTitle": "Water Intake",
+  "description": "Estimate how much water you should drink daily based on your body weight, exercise, and climate.",
+  "icon": "Droplets",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-08-04",
+  "resultUnit": "L/day",
+  "chartType": "none",
+  "fields": [
+    { "id": "weight", "label": "Weight", "type": "number", "defaultValue": 70, "min": 1, "max": 500, "step": 0.1 },
+    { "id": "weightUnit", "label": "Weight unit", "type": "select", "defaultValue": "kg", "options": [
+      { "label": "kg", "value": "kg" },
+      { "label": "lb", "value": "lb" }
+    ] },
+    { "id": "exerciseMinutes", "label": "Daily exercise", "type": "number", "unit": "minutes", "defaultValue": 30, "min": 0, "max": 600, "step": 5 },
+    { "id": "climate", "label": "Climate", "type": "select", "defaultValue": "temperate", "options": [
+      { "label": "Temperate / cold", "value": "temperate" },
+      { "label": "Hot / humid", "value": "hot" }
+    ] }
+  ],
+  "formula": {
+    "summary": "A common baseline is about 33 ml of water per kilogram of body weight, with additions for exercise and hot climates that increase fluid loss through sweat.",
+    "expression": "Water (L) = weight(kg) × 0.033 + exercise adjustment + climate adjustment",
+    "variables": [
+      { "symbol": "weight(kg)", "meaning": "Body weight in kilograms" },
+      { "symbol": "exercise adjustment", "meaning": "+0.35 L per 30 minutes of exercise" }
+    ]
+  },
+  "examples": [
+    { "title": "70kg, 30 minutes of exercise, temperate climate", "inputs": { "weight": 70, "weightUnit": "kg", "exerciseMinutes": 30, "climate": "temperate" } }
+  ],
+  "faqs": [
+    { "question": "Does this include water from food and other drinks?", "answer": "No - this estimates total fluid needs, which you can get from water, other beverages, and water-rich foods. Roughly 20% of daily water intake typically comes from food." },
+    { "question": "Is more water always better?", "answer": "No - drinking far beyond your needs can dilute electrolytes and, in extreme cases, cause hyponatremia. This calculator gives a reasonable target, not a floor to keep exceeding." }
+  ],
+  "relatedSlugs": ["bmi", "calorie", "bmr"],
+  "seoContent": [
+    { "heading": "Why water needs vary by person", "body": "Body size, activity level, and climate all change how much fluid you lose and need to replace each day. A larger person generally needs more water than a smaller one, and both exercise and hot weather increase fluid loss through sweat, which is why this calculator adjusts for both." },
+    { "heading": "Signs you may not be drinking enough", "body": "Thirst, dark urine, fatigue, and headaches can all signal mild dehydration. This calculator gives a solid starting target, but paying attention to your body's signals and adjusting intake on hotter or more active days is just as important as hitting an exact number." }
+  ]
+}

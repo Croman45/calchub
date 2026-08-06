@@ -1,0 +1,34 @@
+{
+  "slug": "decimal-to-fraction",
+  "category": "math",
+  "title": "Decimal to Fraction Calculator",
+  "shortTitle": "Decimal to Fraction",
+  "description": "Convert any decimal number into a simplified fraction and its equivalent percentage.",
+  "icon": "Hash",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-06",
+  "chartType": "none",
+  "fields": [
+    { "id": "decimal", "label": "Decimal number", "type": "number", "defaultValue": 0.75, "step": 0.0001 }
+  ],
+  "formula": {
+    "summary": "A decimal is written as a whole number over a power of 10 matching its number of decimal places, then reduced to lowest terms.",
+    "expression": "0.75 = 75/100 = 3/4 (after dividing by GCD(75, 100) = 25)",
+    "variables": [
+      { "symbol": "decimal places", "meaning": "Determines the power of 10 used as the initial denominator" }
+    ]
+  },
+  "examples": [
+    { "title": "0.75", "inputs": { "decimal": 0.75 }, "note": "= 3/4 = 75%" }
+  ],
+  "faqs": [
+    { "question": "Does this handle repeating decimals?", "answer": "It converts up to 10 decimal places of precision as entered. True infinitely repeating decimals (like 0.333...) need a different algebraic method to express exactly, but entering enough digits gives a very close approximation." },
+    { "question": "Can I convert a fraction back to a decimal instead?", "answer": "Yes - use the Fraction Calculator, which also shows the decimal equivalent of any fraction result." }
+  ],
+  "relatedSlugs": ["fraction", "percentage", "gcd"],
+  "seoContent": [
+    { "heading": "Converting decimals to fractions", "body": "Every terminating decimal can be written exactly as a fraction: count the digits after the decimal point, put the number (without the decimal point) over 1 followed by that many zeros, then simplify. This calculator automates that process and reduces the result using the greatest common divisor." },
+    { "heading": "Fractions, decimals, and percentages are the same value", "body": "3/4, 0.75, and 75% all represent the exact same quantity expressed three different ways. Being able to convert fluidly between them is useful across cooking measurements, financial calculations, and everyday math." }
+  ]
+}

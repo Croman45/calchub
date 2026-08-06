@@ -1,0 +1,64 @@
+---
+title: "How Mortgage Amortization Actually Works"
+description: "A plain-English walkthrough of how your monthly mortgage payment splits between interest and principal, and why that split shifts over time."
+date: "2026-07-15"
+author: "CalcHub Team"
+tags: ["finance", "mortgage", "amortization"]
+coverIcon: "Home"
+---
+
+If you've ever looked at a mortgage statement and wondered why so little of your early payments
+seem to go toward your actual balance, you've bumped into amortization - the process that
+determines exactly how each payment splits between interest and principal over the life of a
+loan.
+
+## The core idea
+
+Every fixed-rate mortgage payment is the same dollar amount from your first payment to your
+last. What changes, month to month, is the *mix* of that payment:
+
+- Early on, most of your payment covers **interest** on the (still large) remaining balance.
+- Later, most of your payment reduces **principal**, since the balance - and the interest charged
+  on it - has shrunk.
+
+This is why paying off a 30-year mortgage feels slow at first: in year one, you might pay
+thousands in interest for every thousand dollars of principal you actually pay down.
+
+## The formula
+
+The monthly payment itself is constant, calculated once at the start of the loan:
+
+```
+M = P × [r(1+r)^n] / [(1+r)^n − 1]
+```
+
+Where `P` is the loan principal, `r` is the monthly interest rate (annual rate ÷ 12), and `n` is
+the total number of payments (years × 12). Our [Mortgage Calculator](/finance/mortgage) applies
+this exact formula, then adds your property tax and insurance on top so the total matches what
+you'd see on a real monthly statement.
+
+### A worked example
+
+Take a $400,000 home with 20% down ($80,000), a 30-year term, and a 6.5% rate:
+
+1. Loan principal: $400,000 − $80,000 = $320,000
+2. Monthly rate: 6.5% ÷ 12 ≈ 0.542%
+3. Number of payments: 30 × 12 = 360
+4. Applying the formula gives a principal & interest payment of roughly $2,023/month
+
+In month one, roughly $1,733 of that payment is interest and only about $290 reduces principal.
+By month 300 (25 years in), that ratio has almost completely flipped.
+
+## Why extra payments matter so much early on
+
+Because so much of an early payment is interest, any extra amount you pay toward principal in
+the first few years compounds in your favor for the rest of the loan - it reduces the balance
+that all future interest is calculated on. This is why even a modest extra principal payment
+early in a 30-year mortgage can shave years off the loan and save a significant amount in total
+interest.
+
+## Try it yourself
+
+Plug your own numbers into the [Mortgage Calculator](/finance/mortgage) to see your exact
+monthly payment, or compare it against a shorter term to see how much total interest a 15-year
+loan could save versus a 30-year one.

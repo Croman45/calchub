@@ -1,0 +1,34 @@
+{
+  "slug": "age",
+  "category": "time",
+  "title": "Age Calculator",
+  "shortTitle": "Age",
+  "description": "Calculate your exact age in years, months, and days, plus how many days until your next birthday.",
+  "icon": "Cake",
+  "featured": true,
+  "popular": true,
+  "dateAdded": "2026-06-25",
+  "chartType": "none",
+  "fields": [
+    { "id": "birthDate", "label": "Date of birth", "type": "date", "defaultValue": "2000-01-01" }
+  ],
+  "formula": {
+    "summary": "Age is calculated as a calendar-aware difference between the birth date and today, correctly handling varying month lengths and leap years.",
+    "expression": "Age = today − birthDate, broken into years, months, and days",
+    "variables": [
+      { "symbol": "birthDate", "meaning": "The date of birth you enter" }
+    ]
+  },
+  "examples": [
+    { "title": "Born January 1, 2000", "inputs": { "birthDate": "2000-01-01" } }
+  ],
+  "faqs": [
+    { "question": "How is this different from just dividing days by 365?", "answer": "Dividing total days by 365.25 gives an approximation that drifts due to leap years and varying month lengths. This calculator instead walks the calendar month by month for an exact years/months/days breakdown." },
+    { "question": "Does it account for leap years?", "answer": "Yes - because the calculation compares actual calendar dates rather than a fixed day count, leap years (like February 29) are handled automatically and correctly." }
+  ],
+  "relatedSlugs": ["date-difference", "countdown"],
+  "seoContent": [
+    { "heading": "Calculating exact age from a birth date", "body": "Your age isn't just 'years since birth' - it's a precise calendar difference that includes whole years, remaining months, and remaining days, since your birthday determines exactly when each year 'ticks over.' This calculator computes that breakdown exactly, along with your total days lived." },
+    { "heading": "Why calendar-aware math matters", "body": "A naive approach - subtracting birth year from current year, or dividing days by 365.25 - can be off by a day or more due to how leap years and different month lengths interact. This calculator instead performs the same kind of calendar arithmetic a person would do by hand, just automatically and precisely." }
+  ]
+}

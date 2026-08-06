@@ -1,0 +1,49 @@
+{
+  "slug": "body-fat",
+  "category": "health",
+  "title": "Body Fat Calculator",
+  "shortTitle": "Body Fat",
+  "description": "Estimate your body fat percentage using the U.S. Navy circumference method with a measuring tape.",
+  "icon": "Ruler",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-03",
+  "resultUnit": "%",
+  "chartType": "none",
+  "fields": [
+    { "id": "sex", "label": "Sex", "type": "radio", "defaultValue": "male", "options": [
+      { "label": "Male", "value": "male" },
+      { "label": "Female", "value": "female" }
+    ] },
+    { "id": "height", "label": "Height", "type": "number", "defaultValue": 175, "min": 1, "max": 300, "step": 0.1 },
+    { "id": "heightUnit", "label": "Height unit", "type": "select", "defaultValue": "cm", "options": [
+      { "label": "cm", "value": "cm" },
+      { "label": "in", "value": "in" },
+      { "label": "ft", "value": "ft" }
+    ] },
+    { "id": "neck", "label": "Neck circumference", "type": "number", "unit": "cm", "defaultValue": 38, "min": 10, "max": 100, "step": 0.1 },
+    { "id": "waist", "label": "Waist circumference", "type": "number", "unit": "cm", "defaultValue": 85, "min": 30, "max": 250, "step": 0.1 },
+    { "id": "hip", "label": "Hip circumference (women only)", "type": "number", "unit": "cm", "defaultValue": 95, "min": 30, "max": 250, "step": 0.1, "helpText": "Only used when Sex is set to Female." }
+  ],
+  "formula": {
+    "summary": "The U.S. Navy method estimates body fat from simple tape-measure circumferences, using a formula validated against underwater weighing.",
+    "expression": "Men: 495/(1.0324 − 0.19077·log10(waist−neck) + 0.15456·log10(height)) − 450",
+    "variables": [
+      { "symbol": "waist, neck, hip", "meaning": "Circumference measurements in centimeters" },
+      { "symbol": "height", "meaning": "Height in centimeters" }
+    ]
+  },
+  "examples": [
+    { "title": "Male, 175cm, neck 38cm, waist 85cm", "inputs": { "sex": "male", "height": 175, "heightUnit": "cm", "neck": 38, "waist": 85, "hip": 95 } }
+  ],
+  "faqs": [
+    { "question": "How accurate is the tape-measure method?", "answer": "It's typically within 3-4 percentage points of more precise lab methods like DEXA scans - accurate enough to track trends over time, but not a clinical-grade measurement." },
+    { "question": "Where exactly should I measure?", "answer": "Neck: just below the larynx. Waist: at the navel for men, at the narrowest point for women. Hip (women): at the widest point of the hips. Measure snugly but without compressing the skin." },
+    { "question": "Why does the formula need hip measurement for women only?", "answer": "The U.S. Navy method uses sex-specific formulas because body fat distribution differs by sex on average - the women's formula was calibrated using hip circumference as an additional predictor for better accuracy." }
+  ],
+  "relatedSlugs": ["bmi", "bmr", "calorie"],
+  "seoContent": [
+    { "heading": "Why body fat percentage matters more than weight alone", "body": "Two people with the same weight and height can have very different body compositions - one could carry mostly muscle, the other mostly fat. Body fat percentage gives a clearer picture of health and fitness than weight or BMI alone, since it directly reflects how much of your body is fat tissue versus lean mass." },
+    { "heading": "About the U.S. Navy circumference method", "body": "Developed for military fitness assessments, this method uses only a measuring tape and a small number of circumference measurements, making it far more accessible than skinfold calipers or lab-based methods like DEXA or hydrostatic weighing, while still providing a reasonably reliable estimate for tracking change over time." }
+  ]
+}

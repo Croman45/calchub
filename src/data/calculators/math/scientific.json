@@ -1,0 +1,35 @@
+{
+  "slug": "scientific",
+  "category": "math",
+  "title": "Scientific Calculator",
+  "shortTitle": "Scientific",
+  "description": "A full scientific calculator with trigonometry, logarithms, powers, and roots, right in your browser.",
+  "icon": "Calculator",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-06-30",
+  "chartType": "none",
+  "fields": [],
+  "formula": {
+    "summary": "Expressions are parsed with a hand-written tokenizer and recursive-descent parser (not JavaScript's eval) and evaluated left-to-right respecting standard operator precedence.",
+    "expression": "+ − × ÷ ^ % with sin, cos, tan, log, ln, sqrt, and parentheses",
+    "variables": [
+      { "symbol": "pi, e", "meaning": "Built-in mathematical constants" },
+      { "symbol": "^", "meaning": "Exponentiation (power)" }
+    ]
+  },
+  "examples": [
+    { "title": "sqrt(144) + 2^5", "inputs": {}, "note": "Evaluates to 12 + 32 = 44" },
+    { "title": "sin(pi/2)", "inputs": {}, "note": "Evaluates to 1" }
+  ],
+  "faqs": [
+    { "question": "Are angles in degrees or radians?", "answer": "Trigonometric functions use radians, matching standard mathematical and programming convention. To use degrees, multiply by pi/180 first, e.g. sin(45 * pi/180)." },
+    { "question": "What functions are supported?", "answer": "sin, cos, tan, asin, acos, atan, log (base 10), ln (natural log), sqrt, cbrt, abs, exp, round, floor, ceil, plus +, −, ×, ÷, ^ (power), % (modulo), and factorial (!)." },
+    { "question": "Is it safe to paste in arbitrary text?", "answer": "Yes - the calculator never executes JavaScript from your input. It uses a custom parser that only understands numbers, operators, and the specific function names listed above, and rejects anything else with an error." }
+  ],
+  "relatedSlugs": ["percentage", "fraction", "gcd"],
+  "seoContent": [
+    { "heading": "A real scientific calculator, safely evaluated", "body": "Many online 'calculators' evaluate your input with JavaScript's eval() or new Function(), which can be a security risk. This one uses a dedicated tokenizer and recursive-descent parser built specifically for arithmetic, so it only ever understands numbers, operators, and a fixed set of named functions - never arbitrary code." },
+    { "heading": "Operator precedence and functions", "body": "The parser respects standard order of operations: parentheses first, then exponentiation, then multiplication/division/modulo, then addition/subtraction, with unary minus and factorial handled at the appropriate precedence level - the same rules taught in school and used by graphing calculators." }
+  ]
+}

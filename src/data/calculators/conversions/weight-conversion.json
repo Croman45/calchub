@@ -1,0 +1,52 @@
+{
+  "slug": "weight-conversion",
+  "category": "conversions",
+  "title": "Weight Converter",
+  "shortTitle": "Weight",
+  "description": "Convert between milligrams, grams, kilograms, metric tons, ounces, pounds, and stone.",
+  "icon": "Scale",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-01",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 1, "step": 0.01 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "kg", "options": [
+      { "label": "Milligrams (mg)", "value": "mg" },
+      { "label": "Grams (g)", "value": "g" },
+      { "label": "Kilograms (kg)", "value": "kg" },
+      { "label": "Metric tons (t)", "value": "t" },
+      { "label": "Ounces (oz)", "value": "oz" },
+      { "label": "Pounds (lb)", "value": "lb" },
+      { "label": "Stone (st)", "value": "st" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "lb", "options": [
+      { "label": "Milligrams (mg)", "value": "mg" },
+      { "label": "Grams (g)", "value": "g" },
+      { "label": "Kilograms (kg)", "value": "kg" },
+      { "label": "Metric tons (t)", "value": "t" },
+      { "label": "Ounces (oz)", "value": "oz" },
+      { "label": "Pounds (lb)", "value": "lb" },
+      { "label": "Stone (st)", "value": "st" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Every weight unit is converted through kilograms as the common base unit.",
+    "expression": "result = value × (factor_from ÷ factor_to), where factors convert each unit to kilograms",
+    "variables": [
+      { "symbol": "factor_from, factor_to", "meaning": "Each unit's conversion factor to kilograms" }
+    ]
+  },
+  "examples": [
+    { "title": "1 kilogram to pounds", "inputs": { "value": 1, "fromUnit": "kg", "toUnit": "lb" }, "note": "= 2.204623 lb" }
+  ],
+  "faqs": [
+    { "question": "What's the difference between mass and weight here?", "answer": "This calculator, like everyday usage, treats 'weight' and 'mass' interchangeably (kilograms, pounds) rather than distinguishing mass from gravitational force, which is standard for cooking, shipping, and body-weight use cases." },
+    { "question": "How many pounds are in a stone?", "answer": "1 stone = 14 pounds exactly, a unit still commonly used for body weight in the UK and Ireland." }
+  ],
+  "relatedSlugs": ["length-conversion", "volume-conversion", "area-conversion"],
+  "seoContent": [
+    { "heading": "Common weight conversion use cases", "body": "Weight conversions come up constantly in cooking (grams to ounces), fitness (kilograms to pounds for body weight), shipping (choosing between kg and lb pricing tiers), and science (working in metric while reading imperial-labeled products)." },
+    { "heading": "Why metric tons differ from other 'tons'", "body": "This calculator uses the metric ton (1,000 kg), which differs slightly from the US short ton (2,000 lb ≈ 907 kg) and the UK long ton (2,240 lb ≈ 1,016 kg) - a common source of confusion in international shipping and industrial contexts." }
+  ]
+}

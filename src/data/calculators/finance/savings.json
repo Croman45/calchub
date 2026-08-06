@@ -1,0 +1,39 @@
+{
+  "slug": "savings",
+  "category": "finance",
+  "title": "Savings Calculator",
+  "shortTitle": "Savings",
+  "description": "Project your savings account balance based on your deposit, monthly contributions, and interest rate.",
+  "icon": "PiggyBank",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-06-27",
+  "resultUnit": "USD",
+  "chartType": "line",
+  "fields": [
+    { "id": "initialDeposit", "label": "Initial deposit", "type": "number", "unit": "$", "defaultValue": 1000, "min": 0, "step": 50 },
+    { "id": "monthlyContribution", "label": "Monthly contribution", "type": "number", "unit": "$", "defaultValue": 200, "min": 0, "step": 10 },
+    { "id": "interestRate", "label": "Annual interest rate (APY)", "type": "number", "unit": "%", "defaultValue": 4, "min": 0, "max": 30, "step": 0.01 },
+    { "id": "years", "label": "Savings period", "type": "number", "unit": "years", "defaultValue": 5, "min": 0, "max": 50, "step": 1 }
+  ],
+  "formula": {
+    "summary": "Each month, the balance grows by the monthly-equivalent interest rate and then the new contribution is added, compounding forward for the full savings period.",
+    "expression": "Balance_m = Balance_{m-1} × (1 + r/12) + contribution",
+    "variables": [
+      { "symbol": "r", "meaning": "Annual percentage yield (APY), as a decimal" },
+      { "symbol": "contribution", "meaning": "Fixed amount added every month" }
+    ]
+  },
+  "examples": [
+    { "title": "$1,000 start, $200/month, 4% APY for 5 years", "inputs": { "initialDeposit": 1000, "monthlyContribution": 200, "interestRate": 4, "years": 5 } }
+  ],
+  "faqs": [
+    { "question": "Is this the same as a high-yield savings account?", "answer": "Yes - enter the APY your bank advertises and this models the same monthly-compounding growth most high-yield savings accounts use." },
+    { "question": "What if I don't add anything monthly?", "answer": "Set the monthly contribution to 0 to see how your initial deposit alone would grow at the given interest rate." }
+  ],
+  "relatedSlugs": ["compound-interest", "investment", "mortgage"],
+  "seoContent": [
+    { "heading": "Building an emergency fund or short-term goal", "body": "Savings accounts prioritize safety and liquidity over growth, so the interest rate is typically much lower than long-term investment returns. This calculator helps you see exactly how a given monthly contribution and rate combine to reach a target balance, which is useful for planning an emergency fund, a home down payment, or a vacation fund with a specific deadline." },
+    { "heading": "Why consistency matters more than timing", "body": "Because interest compounds monthly, consistently contributing the same amount every month - regardless of market conditions, since savings rates barely move day to day - produces a predictable, steadily growing balance that's easy to plan around." }
+  ]
+}

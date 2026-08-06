@@ -1,0 +1,39 @@
+{
+  "slug": "credit-card-payoff",
+  "category": "finance",
+  "title": "Credit Card Payoff Calculator",
+  "shortTitle": "Credit Card Payoff",
+  "description": "Find out how long it will take to pay off a credit card balance and how much interest you'll pay.",
+  "icon": "CreditCard",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-08-05",
+  "chartType": "none",
+  "fields": [
+    { "id": "balance", "label": "Current balance", "type": "number", "unit": "$", "defaultValue": 5000, "min": 0, "step": 50 },
+    { "id": "apr", "label": "Annual Percentage Rate (APR)", "type": "number", "unit": "%", "defaultValue": 22, "min": 0, "max": 60, "step": 0.1 },
+    { "id": "monthlyPayment", "label": "Fixed monthly payment", "type": "number", "unit": "$", "defaultValue": 200, "min": 0, "step": 10 }
+  ],
+  "formula": {
+    "summary": "Given a fixed monthly payment above the interest accruing each month, this solves for how many months it takes to bring the balance to zero.",
+    "expression": "n = −ln(1 − rB/A) / ln(1 + r)",
+    "variables": [
+      { "symbol": "B", "meaning": "Current balance" },
+      { "symbol": "r", "meaning": "Monthly interest rate (APR ÷ 12)" },
+      { "symbol": "A", "meaning": "Fixed monthly payment" }
+    ]
+  },
+  "examples": [
+    { "title": "$5,000 balance at 22% APR, paying $200/month", "inputs": { "balance": 5000, "apr": 22, "monthlyPayment": 200 } }
+  ],
+  "faqs": [
+    { "question": "What happens if my payment barely covers interest?", "answer": "If your monthly payment is at or below that month's interest charge, the balance never decreases and can even grow - the calculator flags this and tells you the minimum payment needed to make progress." },
+    { "question": "Does paying more each month really help that much?", "answer": "Yes, dramatically - because credit card APRs are high, even a modest increase in your fixed payment can cut months (and total interest) off the payoff time by a large margin." },
+    { "question": "Should I use the avalanche or snowball method with multiple cards?", "answer": "This calculator handles one balance at a time. For multiple cards, run each one separately: the avalanche method pays extra toward the highest-APR card first (saves the most interest), while the snowball method targets the smallest balance first (builds momentum)." }
+  ],
+  "relatedSlugs": ["loan", "compound-interest", "mortgage"],
+  "seoContent": [
+    { "heading": "Why credit card debt is so expensive", "body": "Credit cards typically charge some of the highest interest rates of any common consumer debt, often 20% or more, and that interest compounds monthly on any unpaid balance. Making only minimum payments can stretch payoff out for years and multiply the amount of interest paid far beyond the original balance." },
+    { "heading": "How a fixed payment plan works", "body": "Committing to a fixed monthly payment - rather than a shrinking minimum-payment amount - accelerates payoff because a constant payment covers more and more principal each month as the balance (and its interest charge) falls. This calculator solves the exact number of months that takes given your balance, APR, and payment." }
+  ]
+}

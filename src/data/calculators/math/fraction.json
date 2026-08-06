@@ -1,0 +1,43 @@
+{
+  "slug": "fraction",
+  "category": "math",
+  "title": "Fraction Calculator",
+  "shortTitle": "Fraction",
+  "description": "Add, subtract, multiply, or divide two fractions and get the simplified result instantly.",
+  "icon": "Divide",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-05",
+  "chartType": "none",
+  "fields": [
+    { "id": "numerator1", "label": "Numerator 1", "type": "number", "defaultValue": 1, "step": 1 },
+    { "id": "denominator1", "label": "Denominator 1", "type": "number", "defaultValue": 2, "step": 1 },
+    { "id": "operation", "label": "Operation", "type": "select", "defaultValue": "add", "options": [
+      { "label": "+ Add", "value": "add" },
+      { "label": "− Subtract", "value": "subtract" },
+      { "label": "× Multiply", "value": "multiply" },
+      { "label": "÷ Divide", "value": "divide" }
+    ] },
+    { "id": "numerator2", "label": "Numerator 2", "type": "number", "defaultValue": 1, "step": 1 },
+    { "id": "denominator2", "label": "Denominator 2", "type": "number", "defaultValue": 3, "step": 1 }
+  ],
+  "formula": {
+    "summary": "Fractions are combined using a common denominator for addition/subtraction, or straightforward cross-multiplication for multiplication/division, then simplified using the greatest common divisor.",
+    "expression": "a/b + c/d = (ad + bc)/bd, then simplify by GCD(numerator, denominator)",
+    "variables": [
+      { "symbol": "a/b, c/d", "meaning": "The two input fractions" }
+    ]
+  },
+  "examples": [
+    { "title": "1/2 + 1/3", "inputs": { "numerator1": 1, "denominator1": 2, "operation": "add", "numerator2": 1, "denominator2": 3 }, "note": "= 5/6" }
+  ],
+  "faqs": [
+    { "question": "Does it simplify the result automatically?", "answer": "Yes - every result is reduced to lowest terms using the greatest common divisor of the numerator and denominator." },
+    { "question": "Can I use negative numbers?", "answer": "Yes - enter a negative numerator or denominator and the calculator handles the sign correctly, keeping the denominator positive in the simplified result." }
+  ],
+  "relatedSlugs": ["decimal-to-fraction", "gcd", "lcm", "percentage"],
+  "seoContent": [
+    { "heading": "How fraction arithmetic works", "body": "Adding or subtracting fractions requires a common denominator, which is why the cross-multiplication shortcut a/b ± c/d = (ad ± bc)/bd works - it's really just finding a shared denominator (bd) and adjusting each numerator to match. Multiplication and division of fractions are simpler: multiply numerators and denominators directly, or flip and multiply for division." },
+    { "heading": "Why simplifying matters", "body": "An unsimplified fraction like 4/8 is mathematically equal to 1/2, but 1/2 is easier to work with and compare to other fractions. This calculator always reduces the final answer to lowest terms by dividing both the numerator and denominator by their greatest common divisor." }
+  ]
+}

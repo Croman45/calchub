@@ -1,0 +1,52 @@
+{
+  "slug": "volume-conversion",
+  "category": "conversions",
+  "title": "Volume Converter",
+  "shortTitle": "Volume",
+  "description": "Convert between milliliters, liters, cubic meters, US gallons, quarts, cups, and fluid ounces.",
+  "icon": "Beaker",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-10",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 1, "step": 0.01 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "l", "options": [
+      { "label": "Milliliters (ml)", "value": "ml" },
+      { "label": "Liters (L)", "value": "l" },
+      { "label": "Cubic meters (m³)", "value": "m3" },
+      { "label": "US gallons (gal)", "value": "gal_us" },
+      { "label": "US quarts (qt)", "value": "qt_us" },
+      { "label": "US cups", "value": "cup_us" },
+      { "label": "US fluid ounces (fl oz)", "value": "floz_us" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "gal_us", "options": [
+      { "label": "Milliliters (ml)", "value": "ml" },
+      { "label": "Liters (L)", "value": "l" },
+      { "label": "Cubic meters (m³)", "value": "m3" },
+      { "label": "US gallons (gal)", "value": "gal_us" },
+      { "label": "US quarts (qt)", "value": "qt_us" },
+      { "label": "US cups", "value": "cup_us" },
+      { "label": "US fluid ounces (fl oz)", "value": "floz_us" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Every volume unit is converted through liters as the common base unit.",
+    "expression": "result = value × (factor_from ÷ factor_to), where factors convert each unit to liters",
+    "variables": [
+      { "symbol": "factor_from, factor_to", "meaning": "Each unit's conversion factor to liters" }
+    ]
+  },
+  "examples": [
+    { "title": "1 liter to US gallons", "inputs": { "value": 1, "fromUnit": "l", "toUnit": "gal_us" }, "note": "≈ 0.264172 gal" }
+  ],
+  "faqs": [
+    { "question": "Does this use US or UK (imperial) gallons?", "answer": "This calculator uses US liquid gallons and cups. UK imperial gallons are about 20% larger (1 UK gallon ≈ 1.20095 US gallons) - a common source of recipe conversion errors." },
+    { "question": "Is this useful for cooking recipe conversion?", "answer": "Yes - converting between metric (ml, liters) and US customary (cups, fluid ounces) is one of the most common uses for a volume converter when following recipes from a different region." }
+  ],
+  "relatedSlugs": ["weight-conversion", "length-conversion", "concrete"],
+  "seoContent": [
+    { "heading": "Metric vs. US customary volume units", "body": "Most of the world measures volume in milliliters and liters, while US recipes and product labels typically use cups, fluid ounces, quarts, and gallons. This calculator bridges both systems using precise, standards-based conversion factors." },
+    { "heading": "A note on US vs. UK measurements", "body": "The word 'gallon,' 'quart,' 'pint,' and 'cup' all refer to different actual volumes depending on whether they're US customary or UK imperial units - a frequent source of confusion for recipes sourced internationally. This calculator specifically uses US definitions throughout." }
+  ]
+}

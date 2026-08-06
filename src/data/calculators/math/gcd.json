@@ -1,0 +1,35 @@
+{
+  "slug": "gcd",
+  "category": "math",
+  "title": "GCD Calculator",
+  "shortTitle": "GCD",
+  "description": "Find the Greatest Common Divisor of two numbers with a full Euclidean algorithm step-by-step.",
+  "icon": "Divide",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-08",
+  "chartType": "none",
+  "fields": [
+    { "id": "numberA", "label": "First number", "type": "number", "defaultValue": 48, "step": 1 },
+    { "id": "numberB", "label": "Second number", "type": "number", "defaultValue": 18, "step": 1 }
+  ],
+  "formula": {
+    "summary": "The Euclidean algorithm finds the GCD by repeatedly replacing the larger number with the remainder of dividing it by the smaller number, until the remainder reaches zero.",
+    "expression": "GCD(a, b) = GCD(b, a mod b), until b = 0",
+    "variables": [
+      { "symbol": "a, b", "meaning": "The two integers being compared" }
+    ]
+  },
+  "examples": [
+    { "title": "GCD(48, 18)", "inputs": { "numberA": 48, "numberB": 18 }, "note": "= 6" }
+  ],
+  "faqs": [
+    { "question": "What is the GCD used for?", "answer": "The GCD is used to simplify fractions to lowest terms, solve certain algebra and number theory problems, and is a building block for the LCM calculation." },
+    { "question": "How fast is the Euclidean algorithm?", "answer": "Extremely fast - it's one of the oldest known algorithms and typically finishes in a small number of steps even for very large numbers, which is why it's still the standard method used today." }
+  ],
+  "relatedSlugs": ["lcm", "fraction", "prime-number"],
+  "seoContent": [
+    { "heading": "The Euclidean algorithm, step by step", "body": "Named after the ancient Greek mathematician Euclid, this algorithm is one of the oldest continuously used algorithms in mathematics. It works by repeated division: divide the larger number by the smaller, keep the remainder, then repeat with the smaller number and that remainder, until the remainder is zero - the last nonzero remainder is the GCD." },
+    { "heading": "Why the GCD matters for fractions", "body": "Dividing both the numerator and denominator of a fraction by their GCD produces the same fraction in its simplest possible form. This is exactly what the Fraction Calculator and Decimal to Fraction Calculator do internally after computing a raw result." }
+  ]
+}

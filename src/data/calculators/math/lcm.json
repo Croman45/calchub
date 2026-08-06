@@ -1,0 +1,35 @@
+{
+  "slug": "lcm",
+  "category": "math",
+  "title": "LCM Calculator",
+  "shortTitle": "LCM",
+  "description": "Find the Least Common Multiple of two numbers, calculated from their greatest common divisor.",
+  "icon": "Asterisk",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-08-03",
+  "chartType": "none",
+  "fields": [
+    { "id": "numberA", "label": "First number", "type": "number", "defaultValue": 4, "step": 1 },
+    { "id": "numberB", "label": "Second number", "type": "number", "defaultValue": 6, "step": 1 }
+  ],
+  "formula": {
+    "summary": "The LCM of two numbers can be computed directly from their product and their GCD, avoiding the need to list out multiples.",
+    "expression": "LCM(a, b) = |a × b| ÷ GCD(a, b)",
+    "variables": [
+      { "symbol": "a, b", "meaning": "The two integers being compared" }
+    ]
+  },
+  "examples": [
+    { "title": "LCM(4, 6)", "inputs": { "numberA": 4, "numberB": 6 }, "note": "= 12" }
+  ],
+  "faqs": [
+    { "question": "What is the LCM used for?", "answer": "The LCM is most commonly used to find a common denominator when adding or subtracting fractions with different denominators, and in scheduling problems (like finding when two repeating events coincide)." },
+    { "question": "Is there a faster way than listing multiples?", "answer": "Yes - once you know the GCD (via the Euclidean algorithm), the LCM formula LCM = (a×b)/GCD is much faster than listing out multiples of each number, especially for larger values." }
+  ],
+  "relatedSlugs": ["gcd", "fraction", "prime-number"],
+  "seoContent": [
+    { "heading": "LCM and GCD are two sides of the same coin", "body": "For any two positive integers, their GCD and LCM are related by a simple identity: GCD(a,b) × LCM(a,b) = a × b. This means once you've computed the GCD using the fast Euclidean algorithm, finding the LCM is just one more division." },
+    { "heading": "Where the LCM shows up in everyday math", "body": "Beyond fractions, the LCM is useful anywhere repeating cycles need to be synchronized - like figuring out when two buses on different schedules will next depart at the same time, or aligning repeating patterns in music or manufacturing." }
+  ]
+}

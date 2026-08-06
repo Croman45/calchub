@@ -1,0 +1,40 @@
+{
+  "slug": "tile",
+  "category": "construction",
+  "title": "Tile Calculator",
+  "shortTitle": "Tile",
+  "description": "Calculate exactly how many tiles you need for a floor or wall based on tile size and waste factor.",
+  "icon": "Grid3x3",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-31",
+  "resultUnit": "tiles",
+  "chartType": "none",
+  "fields": [
+    { "id": "areaLength", "label": "Area length", "type": "number", "unit": "ft", "defaultValue": 10, "min": 0.1, "step": 0.1 },
+    { "id": "areaWidth", "label": "Area width", "type": "number", "unit": "ft", "defaultValue": 10, "min": 0.1, "step": 0.1 },
+    { "id": "tileLengthIn", "label": "Tile length", "type": "number", "unit": "in", "defaultValue": 12, "min": 1, "step": 0.5 },
+    { "id": "tileWidthIn", "label": "Tile width", "type": "number", "unit": "in", "defaultValue": 12, "min": 1, "step": 0.5 },
+    { "id": "wasteFactor", "label": "Waste factor", "type": "number", "unit": "%", "defaultValue": 10, "min": 0, "max": 30, "step": 1 }
+  ],
+  "formula": {
+    "summary": "The area to cover is divided by the area of a single tile, then increased by a waste percentage and rounded up to a whole number of tiles.",
+    "expression": "Tiles = ceil((areaLength × areaWidth) ÷ (tileLength × tileWidth ÷ 144) × (1 + waste%))",
+    "variables": [
+      { "symbol": "÷ 144", "meaning": "Converts tile dimensions from square inches to square feet" },
+      { "symbol": "waste%", "meaning": "Extra tiles to cover cuts, breakage, and pattern matching" }
+    ]
+  },
+  "examples": [
+    { "title": "10ft × 10ft floor, 12in × 12in tiles, 10% waste", "inputs": { "areaLength": 10, "areaWidth": 10, "tileLengthIn": 12, "tileWidthIn": 12, "wasteFactor": 10 } }
+  ],
+  "faqs": [
+    { "question": "How much waste factor should I use for tile?", "answer": "10% is typical for a straight layout with standard-size tiles. Use 15-20% for diagonal layouts, large-format tiles, or intricate patterns that create more cuts and offcuts." },
+    { "question": "Should I buy tiles from the same batch?", "answer": "Yes - tile color and shade can vary slightly between production batches, so buying all your tiles (including extras) from the same lot number avoids visible mismatches." }
+  ],
+  "relatedSlugs": ["flooring", "paint", "concrete", "area-conversion"],
+  "seoContent": [
+    { "heading": "Calculating tile quantity accurately", "body": "Tile projects are unforgiving of underestimates - running short mid-installation often means waiting on a special order or risking a batch mismatch. This calculator computes the exact area-based tile count and applies a waste factor so you buy enough on the first trip." },
+    { "heading": "Tile size and layout complexity", "body": "Larger tiles generally mean fewer total tiles but more waste per cut, since a single mis-cut wastes a bigger, more expensive piece. Complex layouts (diagonal, herringbone, mixed sizes) increase the number of cuts needed, which is why this calculator lets you dial in a custom waste percentage rather than assuming a fixed rate." }
+  ]
+}

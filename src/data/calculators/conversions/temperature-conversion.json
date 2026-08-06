@@ -1,0 +1,45 @@
+{
+  "slug": "temperature-conversion",
+  "category": "conversions",
+  "title": "Temperature Converter",
+  "shortTitle": "Temperature",
+  "description": "Convert between Celsius, Fahrenheit, and Kelvin instantly with the exact conversion formulas.",
+  "icon": "Thermometer",
+  "featured": false,
+  "popular": true,
+  "dateAdded": "2026-06-24",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 20, "step": 0.1 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "c", "options": [
+      { "label": "Celsius (°C)", "value": "c" },
+      { "label": "Fahrenheit (°F)", "value": "f" },
+      { "label": "Kelvin (K)", "value": "k" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "f", "options": [
+      { "label": "Celsius (°C)", "value": "c" },
+      { "label": "Fahrenheit (°F)", "value": "f" },
+      { "label": "Kelvin (K)", "value": "k" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Unlike length or weight, temperature scales aren't simple multiples of each other, so each conversion pair uses its own linear formula, converting through Celsius as an intermediate step.",
+    "expression": "°F = °C × 9/5 + 32,   K = °C + 273.15",
+    "variables": [
+      { "symbol": "°C, °F, K", "meaning": "Celsius, Fahrenheit, and Kelvin values" }
+    ]
+  },
+  "examples": [
+    { "title": "20°C to Fahrenheit", "inputs": { "value": 20, "fromUnit": "c", "toUnit": "f" }, "note": "= 68°F" },
+    { "title": "0°C to Kelvin", "inputs": { "value": 0, "fromUnit": "c", "toUnit": "k" }, "note": "= 273.15 K" }
+  ],
+  "faqs": [
+    { "question": "Why can't temperature use a simple multiplication factor like other units?", "answer": "Celsius and Fahrenheit have different zero points (0°C = 32°F) as well as different scale sizes, so the conversion needs both a multiplication and an addition/subtraction step - a full linear equation, not just a ratio." },
+    { "question": "What is absolute zero?", "answer": "Absolute zero, the coldest possible temperature, is 0 K, which equals −273.15°C or −459.67°F. Kelvin has no negative values for this reason." }
+  ],
+  "relatedSlugs": ["length-conversion", "weight-conversion", "volume-conversion"],
+  "seoContent": [
+    { "heading": "The three major temperature scales", "body": "Celsius is used by most of the world and defines 0° and 100° at water's freezing and boiling points. Fahrenheit, still standard in the United States, sets those points at 32° and 212°. Kelvin, used in science, starts at absolute zero and uses the same size degree as Celsius, just shifted by 273.15." },
+    { "heading": "How the conversion formulas were derived", "body": "The Fahrenheit-Celsius formula comes from matching the two known reference points (freezing and boiling of water) and solving for the linear relationship between them, giving the 9/5 scaling factor and 32-degree offset that every conversion in either direction relies on." }
+  ]
+}

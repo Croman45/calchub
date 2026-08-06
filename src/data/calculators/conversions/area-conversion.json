@@ -1,0 +1,50 @@
+{
+  "slug": "area-conversion",
+  "category": "conversions",
+  "title": "Area Converter",
+  "shortTitle": "Area",
+  "description": "Convert between square meters, square kilometers, square feet, acres, and hectares.",
+  "icon": "Square",
+  "featured": false,
+  "popular": false,
+  "dateAdded": "2026-07-09",
+  "chartType": "none",
+  "fields": [
+    { "id": "value", "label": "Value", "type": "number", "defaultValue": 1000, "step": 1 },
+    { "id": "fromUnit", "label": "From", "type": "select", "defaultValue": "sqft", "options": [
+      { "label": "Square meters (m²)", "value": "sqm" },
+      { "label": "Square kilometers (km²)", "value": "sqkm" },
+      { "label": "Square feet (ft²)", "value": "sqft" },
+      { "label": "Square yards (yd²)", "value": "sqyd" },
+      { "label": "Acres", "value": "acre" },
+      { "label": "Hectares", "value": "hectare" }
+    ] },
+    { "id": "toUnit", "label": "To", "type": "select", "defaultValue": "sqm", "options": [
+      { "label": "Square meters (m²)", "value": "sqm" },
+      { "label": "Square kilometers (km²)", "value": "sqkm" },
+      { "label": "Square feet (ft²)", "value": "sqft" },
+      { "label": "Square yards (yd²)", "value": "sqyd" },
+      { "label": "Acres", "value": "acre" },
+      { "label": "Hectares", "value": "hectare" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Every area unit is converted through square meters as the common base unit.",
+    "expression": "result = value × (factor_from ÷ factor_to), where factors convert each unit to square meters",
+    "variables": [
+      { "symbol": "factor_from, factor_to", "meaning": "Each unit's conversion factor to square meters" }
+    ]
+  },
+  "examples": [
+    { "title": "1,000 square feet to square meters", "inputs": { "value": 1000, "fromUnit": "sqft", "toUnit": "sqm" }, "note": "≈ 92.9 m²" }
+  ],
+  "faqs": [
+    { "question": "How big is an acre in square meters?", "answer": "1 acre ≈ 4,046.86 square meters, or about 40% of a hectare - it originated from the area a yoke of oxen could plow in a day." },
+    { "question": "Is this useful for real estate?", "answer": "Yes - real estate listings often mix square feet, square meters, and acres depending on the country, so this converter helps compare properties listed in different units." }
+  ],
+  "relatedSlugs": ["length-conversion", "volume-conversion", "concrete"],
+  "seoContent": [
+    { "heading": "Comparing land and floor area across unit systems", "body": "Area units compound the difference between metric and imperial length units, since they're squared - a small error in a length conversion becomes a larger one in area. This calculator uses exact, squared conversion factors to avoid that compounding error." },
+    { "heading": "Real estate and land measurement", "body": "Property size is described differently around the world: square feet in the US, square meters in most of Europe and Asia, and acres or hectares for larger land parcels. This converter makes it straightforward to compare listings or plan construction projects across these different conventions." }
+  ]
+}

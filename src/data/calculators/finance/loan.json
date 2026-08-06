@@ -1,0 +1,39 @@
+{
+  "slug": "loan",
+  "category": "finance",
+  "title": "Loan Calculator",
+  "shortTitle": "Loan",
+  "description": "Calculate the monthly payment, total interest, and total cost of any fixed-rate installment loan.",
+  "icon": "Banknote",
+  "featured": false,
+  "popular": true,
+  "dateAdded": "2026-06-22",
+  "resultUnit": "USD/month",
+  "chartType": "bar",
+  "fields": [
+    { "id": "principal", "label": "Loan amount", "type": "number", "unit": "$", "defaultValue": 20000, "min": 0, "step": 100 },
+    { "id": "interestRate", "label": "Annual interest rate", "type": "number", "unit": "%", "defaultValue": 8, "min": 0, "max": 50, "step": 0.01 },
+    { "id": "termMonths", "label": "Loan term", "type": "number", "unit": "months", "defaultValue": 48, "min": 1, "max": 480, "step": 1 }
+  ],
+  "formula": {
+    "summary": "A generic amortizing loan payment is computed the same way as a mortgage, without escrow items - just principal and interest spread evenly over the term.",
+    "expression": "M = P × [r(1+r)^n] / [(1+r)^n − 1]",
+    "variables": [
+      { "symbol": "P", "meaning": "Loan principal" },
+      { "symbol": "r", "meaning": "Monthly interest rate (annual rate ÷ 12)" },
+      { "symbol": "n", "meaning": "Total number of monthly payments" }
+    ]
+  },
+  "examples": [
+    { "title": "$20,000 personal loan at 8% for 4 years", "inputs": { "principal": 20000, "interestRate": 8, "termMonths": 48 }, "note": "A typical personal loan or debt-consolidation scenario." }
+  ],
+  "faqs": [
+    { "question": "What kinds of loans can I use this for?", "answer": "Any fixed-rate, fixed-term installment loan - personal loans, student loans, business term loans, or equipment financing - as long as it amortizes evenly like a standard loan." },
+    { "question": "Does this account for origination fees?", "answer": "No, this calculator computes payment based purely on the loan principal you enter. If your lender charges an origination fee financed into the loan, add it to the principal first." }
+  ],
+  "relatedSlugs": ["mortgage", "auto-loan", "credit-card-payoff", "compound-interest"],
+  "seoContent": [
+    { "heading": "Understanding amortized loan payments", "body": "Amortizing loans split every payment between interest (charged on the current balance) and principal (which reduces what you owe). Early in the loan, more of each payment goes to interest; later, more goes to principal - even though the total payment amount never changes. This calculator applies the standard amortization formula to compute an exact monthly payment for any principal, rate, and term." },
+    { "heading": "How the term length changes total cost", "body": "Stretching a loan over more months lowers the monthly payment but increases total interest paid, since the balance stays higher for longer and accrues interest for more periods. Shortening the term raises the monthly payment but can save a substantial amount in total interest over the life of the loan." }
+  ]
+}

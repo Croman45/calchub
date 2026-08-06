@@ -1,0 +1,44 @@
+{
+  "slug": "concrete",
+  "category": "construction",
+  "title": "Concrete Calculator",
+  "shortTitle": "Concrete",
+  "description": "Estimate how much concrete you need in cubic yards and how many bags of mix to buy.",
+  "icon": "HardHat",
+  "featured": true,
+  "popular": false,
+  "dateAdded": "2026-07-12",
+  "resultUnit": "cubic yards",
+  "chartType": "none",
+  "fields": [
+    { "id": "length", "label": "Length", "type": "number", "unit": "ft", "defaultValue": 10, "min": 0.1, "step": 0.1 },
+    { "id": "width", "label": "Width", "type": "number", "unit": "ft", "defaultValue": 10, "min": 0.1, "step": 0.1 },
+    { "id": "thicknessInches", "label": "Thickness", "type": "number", "unit": "in", "defaultValue": 4, "min": 1, "max": 24, "step": 0.5 },
+    { "id": "bagSizeLb", "label": "Bag size", "type": "select", "defaultValue": "80", "options": [
+      { "label": "40 lb bags", "value": "40" },
+      { "label": "60 lb bags", "value": "60" },
+      { "label": "80 lb bags", "value": "80" }
+    ] }
+  ],
+  "formula": {
+    "summary": "Concrete volume is length × width × thickness, converted to cubic yards (the standard ready-mix ordering unit), with bag counts based on typical yield per bag size.",
+    "expression": "Volume (cu ft) = length × width × (thickness ÷ 12), then ÷ 27 for cubic yards",
+    "variables": [
+      { "symbol": "thickness ÷ 12", "meaning": "Converts thickness from inches to feet" },
+      { "symbol": "÷ 27", "meaning": "Converts cubic feet to cubic yards (27 cu ft per cu yd)" }
+    ]
+  },
+  "examples": [
+    { "title": "10ft × 10ft slab, 4 inches thick", "inputs": { "length": 10, "width": 10, "thicknessInches": 4, "bagSizeLb": "80" }, "note": "≈ 1.23 cubic yards, about 56 bags of 80 lb mix" }
+  ],
+  "faqs": [
+    { "question": "How much does an 80 lb bag of concrete cover?", "answer": "An 80 lb bag yields about 0.60 cubic feet of mixed concrete, a 60 lb bag about 0.45 cubic feet, and a 40 lb bag about 0.30 cubic feet." },
+    { "question": "Should I order extra concrete?", "answer": "Yes - most contractors add 5-10% extra to account for uneven subgrade, spillage, and form imperfections, which this calculator flags as a reminder." },
+    { "question": "When should I order ready-mix instead of bags?", "answer": "For slabs larger than roughly 1-2 cubic yards, ready-mix delivery is usually more cost-effective and less labor-intensive than mixing dozens of bags by hand." }
+  ],
+  "relatedSlugs": ["paint", "flooring", "tile", "area-conversion"],
+  "seoContent": [
+    { "heading": "Estimating concrete for slabs, footings, and pads", "body": "Concrete is ordered by volume, typically in cubic yards for ready-mix trucks, so getting an accurate volume estimate before ordering avoids costly shortages or expensive leftover material. This calculator handles the length × width × thickness calculation and the unit conversion to cubic yards automatically." },
+    { "heading": "Choosing between bagged mix and ready-mix delivery", "body": "For small projects like fence post footings or a small patio, bagged concrete mix from a hardware store is often more practical. For larger slabs like driveways or garage floors, ready-mix delivery is usually cheaper per cubic yard and far less physically demanding - this calculator's cubic-yard result is exactly the number a ready-mix supplier will ask for." }
+  ]
+}
